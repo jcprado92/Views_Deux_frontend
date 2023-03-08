@@ -1,0 +1,120 @@
+// .nav{
+//     background-color: lavender;
+//     color: black;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     gap: 2rem;
+//     padding: 0 1rem;
+//     font-size: x-large;
+//     height: 100%;
+//     font-family: 'Nunito', sans-serif;
+//     font-weight: 600;
+//     &__link{
+//       color:black
+//     }
+
+//     @media only screen and (max-width: 440px) {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr 1fr;
+//       }
+// }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 2rem;
+      height: 0.25rem;
+      margin-bottom: 0.5rem;
+      background-color: #333;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    &.open {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(0.3rem, 0.6rem);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.3rem, -0.6rem);
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+
+    li {
+      margin-left: 1rem;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .menu {
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+
+      &.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      li {
+        margin: 1rem 0;
+      }
+    }
+  }
+}

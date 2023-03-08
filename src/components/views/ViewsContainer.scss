@@ -1,0 +1,54 @@
+.viewsContainer {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+
+  // margin-top: 50px;
+  height: 89.5vh;
+  overflow-y: scroll;
+  // margin: 10px 0 10px 0;
+  padding: 10%;
+
+
+  img {
+    border-radius: 8%;
+    width: 220px;
+    height: 220px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 8%;
+    opacity: 0.85;
+    margin-top: 10px;
+  }
+  
+  img:hover {
+    opacity: 1;
+  }
+  @media only screen and (max-width: 767px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 440px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.viewCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.297);
+  transition: 0.3s;
+  border-radius: 8%;
+
+  background-color: #f8edeb5d;
+
+}
+
+.viewCard:hover{
+  opacity: .9;
+}
+
+a {
+  text-decoration: none;
+}

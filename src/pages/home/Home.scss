@@ -1,0 +1,25 @@
+.home{
+    
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: space-between;
+
+
+    &__image{
+        // flex:1;
+        width: 50%;
+        background-image: url('../../../public/Views_home.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+    }
+
+    &__text{
+        display: flex;
+    //     flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
