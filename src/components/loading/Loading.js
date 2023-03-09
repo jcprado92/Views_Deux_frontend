@@ -1,9 +1,10 @@
 import React from 'react'
-
-function Loading() {
+const Loading = () => {
   return (
-    <div>Loading...</div>
-  )
-}
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <h1>Loading...</h1>
+    </div>
+  );
+};
 
-export default Loading
+export default Loading;

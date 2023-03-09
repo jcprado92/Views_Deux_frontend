@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ViewCard from "./ViewCard";
+import Loading from "../loading/Loading";
 
 import "./ViewsContainer.scss";
 
@@ -9,10 +10,16 @@ const API = process.env.REACT_APP_API_URL;
 function ViewsContainer() {
   const [views, setViews] = useState([]);
   const [selectedBorough, setSelectedBorough] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
-    axios.get(`${API}/views`).then((res) => {
+    setIsLoading(true);
+    axios
+    .get(`${API}/views`)
+    .then((res) => {
       setViews(res.data.payload);
+      setIsLoading(false);
     });
   }, []);
 
@@ -25,7 +32,7 @@ function ViewsContainer() {
     setSelectedBorough(e.target.value);
   };
 
-  if (selectedBorough == "") {
+  if (selectedBorough === "") {
     filteredData = copyOfData;
   }
 
@@ -42,12 +49,13 @@ function ViewsContainer() {
         </select>
       </div>
 
-      {}
+      {isLoading ? <Loading/> : 
       <div className="viewsContainer">
         {filteredData.map((view) => (
           <ViewCard key={view.id} view={view} id={view.id} />
         ))}
       </div>
+    }
     </div>
   );
 }

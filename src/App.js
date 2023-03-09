@@ -19,7 +19,7 @@ function App() {
       <Nav/>
       <Routes>
         <Route path='/' element={ <Home /> } />
-        <Route path="/views" element={ <Index /> } />
+        <Route path='/views' element={ <Index /> } />
         <Route path='/views/:id' element={ <Show /> } />
         <Route path='/views/new' element={ < New /> } />
         <Route path='/views/:id/edit' element={ <Edit /> } />
