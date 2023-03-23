@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nav from './components/nav/Nav'
+import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
 import Index from './pages/index/Index';
 import Show from './pages/show/Show';
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Nav/>
+      <NavBar/>
       <Routes>
         <Route path='/' element={ <Home /> } />
         <Route path='/views' element={ <Index /> } />

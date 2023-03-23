@@ -1,40 +1,22 @@
-// .nav{
-//     background-color: lavender;
-//     color: black;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     gap: 2rem;
-//     padding: 0 1rem;
-//     font-size: x-large;
-//     height: 100%;
-//     font-family: 'Nunito', sans-serif;
-//     font-weight: 600;
-//     &__link{
-//       color:black
-//     }
-
-//     @media only screen and (max-width: 440px) {
-//         display: grid;
-//         grid-template-columns: 1fr 1fr 1fr;
-//       }
-// }
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+.navBar {
   background-color: #fff;
 
-  .logo {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 0 20px;
+  }
+
+  &__logo {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
   }
 
-  .menu-toggle {
+  &__menuToggle {
     display: none;
     cursor: pointer;
     border: none;
@@ -49,23 +31,9 @@
       background-color: #333;
       transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
-
-    &.open {
-      span:nth-child(1) {
-        transform: rotate(45deg) translate(0.3rem, 0.6rem);
-      }
-
-      span:nth-child(2) {
-        opacity: 0;
-      }
-
-      span:nth-child(3) {
-        transform: rotate(-45deg) translate(0.3rem, -0.6rem);
-      }
-    }
   }
 
-  .menu {
+  &__menuItems {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -89,14 +57,36 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .menu-toggle {
+    &__menuToggle--open {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(0.3rem, 0.6rem);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.3rem, -0.6rem);
+      }
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+  .navBar{
+    &__menuToggle {
       display: block;
+
+      &--open {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
 
-    .menu {
+    &__menuItems {
       position: absolute;
-      top: 4rem;
+      top: 63px;
       left: 0;
       width: 100%;
       background-color: #fff;
@@ -107,13 +97,12 @@
       pointer-events: none;
       transition: opacity 0.3s ease-in-out;
 
-      &.open {
-        opacity: 1;
-        pointer-events: auto;
-      }
-
       li {
         margin: 1rem 0;
+      }
+
+      &--open {
+        opacity: 1;
       }
     }
   }

@@ -40,7 +40,7 @@ function ViewsContainer() {
     <div>
       <div>
         <select onChange={handleChange}>
-          <option value="">Choose a Borough</option>
+          <option value="">Select a Borough</option>
           <option value="Manhattan">Manhattan</option>
           <option value="Brooklyn">Brooklyn</option>
           <option value="Queens">Queens</option>
