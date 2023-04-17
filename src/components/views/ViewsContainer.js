@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { UserContext } from "../../providers/UserProvider";
 import axios from "axios";
 import ViewCard from "./ViewCard";
 import Loading from "../loading/Loading";
@@ -12,6 +13,7 @@ function ViewsContainer() {
   const [selectedBorough, setSelectedBorough] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const user = useContext(UserContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -48,6 +50,7 @@ function ViewsContainer() {
           {/* <option value='staten-island'>Staten Island</option>   */}
         </select>
       </div>
+
 
       {isLoading ? <Loading/> : 
       <div className="viewsContainer">
